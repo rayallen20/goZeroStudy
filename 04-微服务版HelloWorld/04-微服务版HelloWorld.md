@@ -452,3 +452,8 @@ docker run -d -p 2379:2379 -p 4001:4001 quay.io/coreos/etcd
 ## PART6. 测试
 
 ![测试访问.png](./img/测试访问.png)
+
+## PART7. 问题
+
+1. proto我不熟,大概就知道怎么写能有啥效果,这个后边需要抽几天时间补一下
+2. 实际上这个就是api层和service层,理论上来讲这个例子中,应该还有个order rpc服务

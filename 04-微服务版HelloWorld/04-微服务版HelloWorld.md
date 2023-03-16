@@ -9,13 +9,13 @@
 ### 2.1 创建项目
 
 ```
-(base) yanglei@192 mall % pwd
-/Users/yanglei/Desktop/go-zero-study/goZeroStudy/04-微服务版HelloWorld/mall
-(base) yanglei@192 mall % goctl api new order	# 创建order微服务
+(base) xxx@192 mall % pwd
+/Users/xxx/Desktop/go-zero-study/goZeroStudy/04-微服务版HelloWorld/mall
+(base) xxx@192 mall % goctl api new order	# 创建order微服务
 Done.
-(base) yanglei@192 mall % goctl api new user 	# 创建user微服务
+(base) xxx@192 mall % goctl api new user 	# 创建user微服务
 Done.
-(base) yanglei@192 mall % tree ./ -L 1
+(base) xxx@192 mall % tree ./ -L 1
 ./
 ├── order
 └── user
@@ -54,18 +54,18 @@ GO1.18中增加了工作区的概念,针对的目标即为Go Module的依赖管�
 #### 2.2.4 创建工作区
 
 ```
-(base) yanglei@192 mall % pwd
-/Users/yanglei/Desktop/go-zero-study/goZeroStudy/04-微服务版HelloWorld/mall
-(base) yanglei@192 mall % go work init
-(base) yanglei@192 mall % tree ./ -L 1
+(base) xxx@192 mall % pwd
+/Users/xxx/Desktop/go-zero-study/goZeroStudy/04-微服务版HelloWorld/mall
+(base) xxx@192 mall % go work init
+(base) xxx@192 mall % tree ./ -L 1
 ./
 ├── go.work
 ├── order
 └── user
 
 2 directories, 1 file
-(base) yanglei@192 mall % go work use ./order 
-(base) yanglei@192 mall % go work use ./user
+(base) xxx@192 mall % go work use ./order 
+(base) xxx@192 mall % go work use ./user
 ```
 
 ## PART3. 编写User rpc服务
@@ -75,9 +75,9 @@ GO1.18中增加了工作区的概念,针对的目标即为Go Module的依赖管�
 ### 3.1 创建rpc目录
 
 ```
-(base) yanglei@192 mall % cd user 
-(base) yanglei@192 user % mkdir rpc
-(base) yanglei@192 user % tree ./ -L 1
+(base) xxx@192 mall % cd user 
+(base) xxx@192 user % mkdir rpc
+(base) xxx@192 user % tree ./ -L 1
 ./
 ├── etc
 ├── go.mod
@@ -92,7 +92,7 @@ GO1.18中增加了工作区的概念,针对的目标即为Go Module的依赖管�
 ### 3.2 定义proto
 
 ```
-(base) yanglei@192 user % cat ./proto/user.proto
+(base) xxx@192 user % cat ./proto/user.proto
 ```
 
 ```proto 
@@ -124,13 +124,13 @@ service User {
 ### 3.3 生成GO代码
 
 ```
-(base) yanglei@192 user % cd rpc 
-(base) yanglei@192 rpc % goctl rpc protoc user.proto --go_out=./types --go-grpc_out=./types --zrpc_out=.
+(base) xxx@192 user % cd rpc 
+(base) xxx@192 rpc % goctl rpc protoc user.proto --go_out=./types --go-grpc_out=./types --zrpc_out=.
 Done.
 ```
 
 ```
-(base) yanglei@192 rpc % tree ./ -L 1
+(base) xxx@192 rpc % tree ./ -L 1
 ./
 ├── etc
 ├── internal
@@ -147,8 +147,8 @@ Done.
 完成后的文件目录:
 
 ```
-(base) yanglei@192 rpc % cd ..
-(base) yanglei@192 user % tree ./ -L 1
+(base) xxx@192 rpc % cd ..
+(base) xxx@192 user % tree ./ -L 1
 ./
 ├── etc
 ├── go.mod
@@ -166,7 +166,7 @@ Done.
 ### 3.4 加载依赖
 
 ```
-(base) yanglei@192 user % go mod tidy
+(base) xxx@192 user % go mod tidy
 ...
 go: downloading github.com/onsi/ginkgo/v2 v2.4.0
 ```
@@ -259,9 +259,9 @@ service order-api {
 ### 4.2 根据`order.api`生成代码
 
 ```
-(base) yanglei@192 user % cd ..
-(base) yanglei@192 mall % cd order 
-(base) yanglei@192 order % goctl api go -api order.api -dir ./gen
+(base) xxx@192 user % cd ..
+(base) xxx@192 mall % cd order 
+(base) xxx@192 order % goctl api go -api order.api -dir ./gen
 Done.
 ```
 
@@ -273,7 +273,7 @@ Done.
 此处由于避免生成的代码覆盖掉已有的代码,故暂存到`./gen`目录下,确认没有问题再覆盖
 
 ```    
-(base) yanglei@192 order % tree ./
+(base) xxx@192 order % tree ./
 ./
 ├── etc
 │   └── order-api.yaml

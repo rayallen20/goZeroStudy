@@ -1,0 +1,9 @@
+Name: user-api
+Host: 0.0.0.0
+Port: 8888
+# 此处的UserRpc 是自定义的一个字段名称 只要下边的UserRpc.Etcd.Key写的是user rpc服务的名称即可
+UserRpc:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: user.rpc

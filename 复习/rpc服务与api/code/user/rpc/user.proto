@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "./user";
+
+// LoginRequest 登录操作请求参数
+message LoginRequest {
+  // account 用户账户
+  string account = 1;
+  // password 用户密码
+  string password = 2;
+}
+
+// LoginResponse 登录操作响应参数
+message LoginResponse {
+  // code 响应状态码
+  int64 code = 1;
+  // message 响应状态码对应信息
+  string message = 2;
+  // data 登录操作有效数据接哦股
+  LoginData data = 3;
+}
+
+message LoginData {
+  string jwt = 1;
+  Role role = 2;
+}
+
+message Role {
+  int64 id = 1;
+  string name = 2;
+}
+
+service User {
+  rpc Login(LoginRequest) returns (LoginResponse);
+}

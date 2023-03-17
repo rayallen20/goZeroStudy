@@ -92,7 +92,7 @@ GO1.18中增加了工作区的概念,针对的目标即为Go Module的依赖管�
 ### 3.2 定义proto
 
 ```
-(base) xxx@192 user % cat ./proto/user.proto
+(base) xxx@192 user % cat ./rpc/user.proto
 ```
 
 ```proto 

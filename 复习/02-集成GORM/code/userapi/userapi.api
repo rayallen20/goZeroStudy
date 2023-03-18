@@ -1,0 +1,25 @@
+type LoginRequest {
+	Account  string `json:"account"`
+	Password string `json:"password"`
+}
+
+type LoginResponse {
+	Code    int64      `json:"code"`
+	Message string     `json:"message"`
+	Data    *LoginData `json:"data"`
+}
+
+type LoginData {
+	Jwt  string `json:"jwt"`
+	Role *Role  `json:"role"`
+}
+
+type Role {
+	Id   int64  `json:"id"`
+	Name string `json:"name"`
+}
+
+service user-api {
+	@handler login
+	post /api/login (LoginRequest) returns (LoginResponse)
+}

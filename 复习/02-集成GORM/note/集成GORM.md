@@ -17,8 +17,8 @@ Etcd:
   Key: user.rpc
 MySQL:
   User: root
-  Password: 123456
-  Host: 127.0.0.1
+  Password: "123456"
+  Host: "127.0.0.1"
   Port: 3306
   Database: easms
   Charset: utf8

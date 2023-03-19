@@ -1,0 +1,12 @@
+Name: order-api
+Host: 0.0.0.0
+Port: 8888
+UserRpc:
+  # 指定注册中心的类型
+  Etcd:
+    # 指定注册中心的IP地址和端口
+    Hosts:
+      - 127.0.0.1:2379
+    # 指定要查询的key 此处的key是user rpc服务中
+    # 配置文件中 Key字段的值
+    Key: user.rpc

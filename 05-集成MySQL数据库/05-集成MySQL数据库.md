@@ -13,8 +13,8 @@
 在`user/internal`下创建目录`model`
 
 ```
-(base) yanglei@192 user % cd internal 
-(base) yanglei@192 internal % tree ./ -L 1
+(base) xxx@192 user % cd internal 
+(base) xxx@192 internal % tree ./ -L 1
 ./
 ├── config
 ├── logic
@@ -43,16 +43,16 @@ CREATE TABLE `user` (
 ### 2.3 生成代码
 
 ```
-(base) yanglei@192 internal % cd model 
-(base) yanglei@192 model % goctl model mysql ddl -src user.sql -dir . -c
+(base) xxx@192 internal % cd model 
+(base) xxx@192 model % goctl model mysql ddl -src user.sql -dir . -c
 Done.
 ```
 
 生成的代码:
 
 ```
-(base) yanglei@192 user % cd internal/model 
-(base) yanglei@192 model % tree ./ -L 1
+(base) xxx@192 user % cd internal/model 
+(base) xxx@192 model % tree ./ -L 1
 ./
 ├── user.sql
 ├── usermodel.go
@@ -391,11 +391,11 @@ goctl rpc protoc user.proto --go_out=./types --go-grpc_out=./types --zrpc_out=.
 执行:
 
 ```
-(base) yanglei@192 user % pwd
-/Users/yanglei/Desktop/go-zero-study/goZeroStudy/05-集成MySQL数据库/mall/user
-(base) yanglei@192 user % cd ./rpc 
-(base) yanglei@192 rpc % chmod +x gen.sh 
-(base) yanglei@192 rpc % ./gen.sh 
+(base) xxx@192 user % pwd
+/Users/xxx/Desktop/go-zero-study/goZeroStudy/05-集成MySQL数据库/mall/user
+(base) xxx@192 user % cd ./rpc 
+(base) xxx@192 rpc % chmod +x gen.sh 
+(base) xxx@192 rpc % ./gen.sh 
 Done.
 ```
 
@@ -473,9 +473,9 @@ func (l *SaveUserLogic) SaveUser(in *user.UserRequest) (*user.UserResponse, erro
 - step1. 创建工程
 
 ```
-(base) yanglei@192 mall % pwd                  
-/Users/yanglei/Desktop/go-zero-study/goZeroStudy/05-集成MySQL数据库/mall
-(base) yanglei@192 mall % goctl api new userapi
+(base) xxx@192 mall % pwd                  
+/Users/xxx/Desktop/go-zero-study/goZeroStudy/05-集成MySQL数据库/mall
+(base) xxx@192 mall % goctl api new userapi
 Done.
 ```
 
@@ -492,16 +492,16 @@ go 1.18
 - step3. 添加userapi至work space
 
 ```
-(base) yanglei@192 mall % pwd
-/Users/yanglei/Desktop/go-zero-study/goZeroStudy/05-集成MySQL数据库/mall
-(base) yanglei@192 mall % go work use ./userapi 
+(base) xxx@192 mall % pwd
+/Users/xxx/Desktop/go-zero-study/goZeroStudy/05-集成MySQL数据库/mall
+(base) xxx@192 mall % go work use ./userapi 
 ```
 
 - step4. 在`userapi/`目录下执行`go mod tidy`
 
 ```
-(base) yanglei@192 mall % cd userapi 
-(base) yanglei@192 userapi % go mod tidy
+(base) xxx@192 mall % cd userapi 
+(base) xxx@192 userapi % go mod tidy
 go: finding module for package github.com/zeromicro/go-zero/core/conf
 ...
 go: found github.com/zeromicro/go-zero/core/logx in github.com/zeromicro/go-zero v1.5.0
@@ -779,21 +779,21 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 #### 7.1 创建工作目录
 
 ```
-(base) yanglei@192 mall % pwd
-/Users/yanglei/Desktop/go-zero-study/goZeroStudy/05-集成MySQL数据库/mall
-(base) yanglei@192 mall % mkdir rpc-common
-(base) yanglei@192 mall % cd rpc-common 
-(base) yanglei@192 rpc-common % go mod init rpc-common
+(base) xxx@192 mall % pwd
+/Users/xxx/Desktop/go-zero-study/goZeroStudy/05-集成MySQL数据库/mall
+(base) xxx@192 mall % mkdir rpc-common
+(base) xxx@192 mall % cd rpc-common 
+(base) xxx@192 rpc-common % go mod init rpc-common
 go: creating new go.mod: module rpc-common
-(base) yanglei@192 rpc-common % mkdir user
+(base) xxx@192 rpc-common % mkdir user
 ```
 
 #### 7.2 创建work space
 
 ```
-(base) yanglei@192 mall % pwd
-/Users/yanglei/Desktop/go-zero-study/goZeroStudy/05-集成MySQL数据库/mall
-(base) yanglei@192 mall % go work use ./rpc-common
+(base) xxx@192 mall % pwd
+/Users/xxx/Desktop/go-zero-study/goZeroStudy/05-集成MySQL数据库/mall
+(base) xxx@192 mall % go work use ./rpc-common
 ```
 
 ### 7.2 移动代码

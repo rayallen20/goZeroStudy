@@ -420,9 +420,9 @@ service userapi-api {
 #### 3.4.2 生成代码
 
 ```
-(base) yanglei@192 userapi % pwd
-/Users/yanglei/Desktop/go-zero-study/goZeroStudy/07-集成JWT/mall/userapi
-(base) yanglei@192 userapi % goctl api go -api userapi.api -dir ./gen
+(base) xxx@192 userapi % pwd
+/Users/xxx/Desktop/go-zero-study/goZeroStudy/07-集成JWT/mall/userapi
+(base) xxx@192 userapi % goctl api go -api userapi.api -dir ./gen
 Done.
 ```
 

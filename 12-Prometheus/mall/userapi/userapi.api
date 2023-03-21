@@ -1,0 +1,19 @@
+type Request {
+	Name string `path:"name,options=you|me"`
+}
+
+type Response {
+	Message string `json:"message"`
+}
+
+@server(
+	// 指定认证方式 写在指定认证方式之后的路由 都需要认证
+	jwt: Auth
+	// 声明中间件
+	middleware: Example
+)
+
+service userapi-api {
+	@handler UserapiHandler
+	get /from/:name(Request) returns (Response)
+}

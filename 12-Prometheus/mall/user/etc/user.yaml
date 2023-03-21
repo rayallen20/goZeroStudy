@@ -1,0 +1,17 @@
+Name: user.rpc
+ListenOn: 0.0.0.0:8080
+Etcd:
+  Hosts:
+  - 127.0.0.1:2379
+  Key: user.rpc
+MySQL:
+  DataSource: root:123456@tcp(127.0.0.1:3306)/zero_mall?charset=utf8&parseTime=true&loc=Local
+CacheRedis:
+  - Host: 127.0.0.1:6379
+    Type: node
+Prometheus:
+  # metrics监听的地址
+  Host: 127.0.0.1
+  # metrics监听的端口
+  Port: 9091
+  Path: /metrics

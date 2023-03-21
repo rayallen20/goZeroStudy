@@ -1,0 +1,23 @@
+Name: userapi-api
+Host: 0.0.0.0
+Port: 8888
+UserRpc:
+  # 指定注册中心的类型
+  Etcd:
+    # 指定注册中心的IP地址和端口
+    Hosts:
+      - 127.0.0.1:2379
+    # 指定要查询的key 此处的key是user rpc服务中
+    # 配置文件中 Key字段的值
+    Key: user.rpc
+Auth:
+  # JWT所需密钥
+  Secret: "newNEW123!@#"
+  # 过期时间 单位:秒 此处设定为1周
+  ExpireIn: 604800
+Prometheus:
+  # metrics监听的地址
+  Host: 127.0.0.1
+  # metrics监听的端口
+  Port: 9081
+  Path: /metrics

@@ -1,0 +1,1 @@
+goctl rpc protoc user_score.proto --go_out=./types --go-grpc_out=./types --zrpc_out=.

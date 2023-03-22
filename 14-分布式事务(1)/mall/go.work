@@ -1,0 +1,9 @@
+go 1.18
+
+use (
+	./order
+	./rpc-common
+	./user
+	./user-score
+	./userapi
+)

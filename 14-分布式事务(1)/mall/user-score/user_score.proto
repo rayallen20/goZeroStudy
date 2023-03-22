@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package score;
+
+// protoc-gen-go 版本大于1.4.0, proto文件需要加上go_package,否则无法生成
+option go_package = "./score";
+
+message UserScoreRequest {
+  int64 userId = 1;
+  int32 score = 2;
+}
+
+message UserScoreResponse {
+  int64 userId = 1;
+  int32 score = 2;
+}
+
+service UserScore {
+  rpc saveUserScore(UserScoreRequest) returns(UserScoreResponse);
+  // saveUserScoreCallback 分布式事务中提交失败之后 回滚时需要执行一个callback
+  rpc saveUserScoreCallback(UserScoreRequest) returns(UserScoreResponse);
+}
